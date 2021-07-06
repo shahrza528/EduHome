@@ -1,0 +1,103 @@
+﻿@model VmBlog
+@{
+    ViewData["Title"] = "Detail";
+}
+
+
+
+<section id="about" style="background-image: url(/assets/image/banner.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="banner-content-wrapper">
+                    <div class="banner-content">
+                        <h2>Blog Details</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</section>
+<section id="courses-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="courses-media">
+                    <img src="~/assets/image/@Model.Blogs[0].image" alt="">
+                </div>
+                <div class="courses-content">
+                    <h2>@Model.Blogs[0].Title</h2>
+                    <p>
+                       @Model.Blogs[0].Description
+                    </p>
+                </div>
+
+                <div class="reply-area">
+                    <h3>LEAVE A MESSAGE</h3>
+                    <p>I must explain to you how all this a mistaken idea of ncing great explorer of the rut the is lder of<br> human happinescias unde omnis iste natus error sit volptatem</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Name</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Message</label>
+                            <textarea name="message" id="message" cols="90%" rows="12"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="blog-sidebar right">
+                    <div class="single-blog-widget">
+                        <h3>SEARCH</h3>
+                        <div class="blog-search">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    @await Component.InvokeAsync("VcCategory")
+                    <div class="single-blog-widget">
+                        <div class="single-blog-banner">
+                            <a href="">
+                                <img src="~/assets/image/blog-img.jpg" alt="">
+                            </a>
+                            <h2>best<br> eductaion<br> theme</h2>
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+                    <div class="single-blog-widget">
+                        <h3>LATEST POST</h3>
+                        @await Component.InvokeAsync("VcLatest")
+
+                    </div>
+                    <div class="single-blog-widget">
+                        <h3>tags</h3>
+                        <div class="single-tag">
+                            <a href="blog-details.html" class="mr-10 mb-10">course</a>
+                            <a href="blog-details.html" class="mr-10 mb-10">education</a>
+                            <a href="blog-details.html" class="mb-10">teachers</a>
+                            <a href="blog-details.html" class="mr-10">learning</a>
+                            <a href="blog-details.html" class="mr-10">university</a>
+                            <a href="blog-details.html">events</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,364 @@
+﻿@model VmHome
+@{
+    ViewData["Title"] = "Home Page";
+    int n = 1;
+}
+
+<section id="custom-slider">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @foreach (var item in Model.Sliders)
+            {
+                <div class="carousel-item @(n==1 ? "active" : "")">
+                    <img src="~/assets/image/@item.Image" class="d-block w-100" alt="..." />
+                    <div class="slider-div1 d-flex justify-content-center">
+                        <div class="slider-content-area">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="slider-content-wrapper animate__animated animate__fadeInUp">
+                                            <div class="slider-content-list">
+                                                <h2>@item.Title</h2>
+                                                <p>
+                                                   @Html.Raw(item.Description)
+                                                </p>
+                                                <a href="">Learn More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                n++;
+            }
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-angle-left"></i></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-angle-right"></i></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="overlay"></div>
+</section>
+<section id="Professional">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="item">
+                    <div class="card" style="width: 18rem">
+                        <div class="card-body">
+                            <h5 class="card-title">PROFESSIONAL TEACHER</h5>
+                            <p class="card-text">
+                                I must explain to you how all this mistaken denouncing pleure and praising pain
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="item">
+                    <div class="card" style="width: 18rem">
+                        <div class="card-body">
+                            <h5 class="card-title">PROFESSIONAL TEACHER</h5>
+                            <p class="card-text">
+                                I must explain to you how all this mistaken denouncing pleure and praising pain
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="item">
+                    <div class="card" style="width: 18rem">
+                        <div class="card-body">
+                            <h5 class="card-title">PROFESSIONAL TEACHER</h5>
+                            <p class="card-text">
+                                I must explain to you how all this mistaken denouncing pleure and praising pain
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="eduhome">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="edu-content">
+                    <h2>
+                        WELCOME TO
+                        <span>EDUHOME</span>
+                    </h2>
+                    <p>
+                        I must explain to you how all this mistaken idea of denouncing pleure and prsing pain was born and I will give you a complete account of the system, and expound the actual teachings the master-builder of humanit happiness
+                    </p>
+                    <p class="second">
+                        I must explain to you how all this mistaken idea of denouncing pleure and prsing pain was born and I will give you a complete account of the system
+                    </p>
+                    <a href="">view courses</a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="edu-media">
+                    <img src="~/assets/image/about.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="courses">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <img src="~/assets/image/section1.png" alt="" />
+                    <h2>COURSES WE OFFER</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="custom-card-items">
+                @foreach (var item in Model.Courses)
+                {
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="card">
+                            <div class="media-5">
+                                <img src="~/assets/image/@item.Image" class="card-img-top" alt="..." />
+                                <div class="course-hover">
+                                    <i class="fas fa-link"></i>
+                                </div>
+                                <div class="overlay"></div>
+                            </div>
+
+                            <div class="card-body">
+                                <h3 class="card-title"><a href="">@item.Title</a></h3>
+                                <p class="card-text">
+                                    @item.Decription
+                                <a href="#" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</section>
+<section id="video">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="content-video">
+                    <h3>TAKE A VIDEO TOUR</h3>
+                    <div class="notice-video">
+                        <div class="video-icon video-hover">
+                            <a data-fancybox href="https://www.youtube.com/watch?v=to6Ghf8UL7o">
+                                <i class="far fa-play-circle"></i>
+                            </a>
+                        </div>
+                        <div class="overlay"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 xol-xs-12">
+                <div class="notice-left-wrapper">
+                    <h3>NOTICE BOARD</h3>
+                </div>
+                <div class="notice-left">
+                    <div class="single-notice-left">
+                        <h4>5, June 2017</h4>
+                        <p>
+                            I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete
+                        </p>
+                    </div>
+                    <div class="single-notice-left">
+                        <h4>4, June 2017</h4>
+                        <p>
+                            I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete
+                        </p>
+                    </div>
+                    <div class="single-notice-left">
+                        <h4>3, June 2017</h4>
+                        <p>
+                            I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete
+                        </p>
+                    </div>
+                    <div class="single-notice-left">
+                        <h4>5, June 2017</h4>
+                        <p>
+                            I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete
+                        </p>
+                    </div>
+                    <div class="single-notice-left">
+                        <h4>4, June 2017</h4>
+                        <p>
+                            I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete
+                        </p>
+                    </div>
+                    <div class="single-notice-left">
+                        <h4>3, June 2017</h4>
+                        <p>
+                            I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="events">
+    <div class="container">
+        <div class="row">
+            <div class="event-media">
+                <img src="~/assets/image/section.png" alt="" />
+                <h2>UPCOMMING EVENTS</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-8 offset-2 col-sm-12">
+                <div class="card mb-3" style="max-width: 540px">
+                    <div class="row g-0">
+                        <div class="col-lg-4 col-md-6">
+                            <img src="~/assets/image/event1.jpg" alt="..." />
+                        </div>
+                        <div class="col-lg-8 col-md-6">
+                            <div class="card-body">
+                                <h3 class="card-title">20 June 2017</h3>
+                                <h4><a href="">ADVANCE PHP WORKSHOP</a></h4>
+                                <ul>
+                                    <li><i class="far fa-clock"></i> 9.00 AM - 4.45 PM</li>
+                                    <li>
+                                        <i class="fas fa-map-marker-alt"></i> New Yourk City
+                                    </li>
+                                </ul>
+                                <div class="event-right">
+                                    <a href="">Join Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3 hidden-md" style="max-width: 540px">
+                    <div class="row g-0">
+                        <div class="col-lg-4 ">
+                            <img src="~/assets/image/event2.jpg" alt="..." />
+                        </div>
+                        <div class="col-lg-8 ">
+                            <div class="card-body">
+                                <h3 class="card-title">20 June 2017</h3>
+                                <h4><a href="">ADVANCE PHP WORKSHOP</a></h4>
+                                <ul>
+                                    <li><i class="far fa-clock"></i> 9.00 AM - 4.45 PM</li>
+                                    <li>
+                                        <i class="fas fa-map-marker-alt"></i> New Yourk City
+                                    </li>
+                                </ul>
+                                <div class="event-right">
+                                    <a href="">Join Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-8 offset-2 col-sm-12">
+                <div class="card mb-3" style="max-width: 540px">
+                    <div class="row g-0">
+                        <div class="col-lg-4 col-md-6">
+                            <img src="~/assets/image/event3.jpg" alt="..." />
+                        </div>
+                        <div class="col-lg-8 col-md-6">
+                            <div class="card-body">
+                                <h3 class="card-title">20 June 2017</h3>
+                                <h4><a href="">ADVANCE PHP WORKSHOP</a></h4>
+                                <ul>
+                                    <li><i class="far fa-clock"></i> 9.00 AM - 4.45 PM</li>
+                                    <li>
+                                        <i class="fas fa-map-marker-alt"></i> New Yourk City
+                                    </li>
+                                </ul>
+                                <div class="event-right">
+                                    <a href="">Join Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3 hidden-md" style="max-width: 540px">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="~/assets/image/event3.jpg" alt="..." />
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title">20 June 2017</h3>
+                                <h4><a href="">ADVANCE PHP WORKSHOP</a></h4>
+                                <ul>
+                                    <li><i class="far fa-clock"></i> 9.00 AM - 4.45 PM</li>
+                                    <li>
+                                        <i class="fas fa-map-marker-alt"></i> New Yourk City
+                                    </li>
+                                </ul>
+                                <div class="event-right">
+                                    <a href="">Join Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="Morgan">
+    <div class="container">
+        <div class="row">
+            <div class="owl-items">
+                @foreach (var item in Model.MorganSlider)
+                {
+                    <div class="owl-carousel owl-theme">
+                        <div class="owl-media">
+                            <img src="~/assets/image/owl1.jpg" alt="" />
+                        </div>
+                        <div class="owl-content">
+                            <p>
+                               @item.Description
+                            </p>
+                            <h4>@item.FullName</h4>
+                            <h5>@item.Position.Name</h5>
+                        </div>
+                    </div>
+                   }
+
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</section>
+<section id="Lastest">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="latest-media">
+                    <img src="~/assets/image/latest1.png" alt="">
+                    <h2>LATEST FROM BLOG</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <partial name="_blog" model="Model.Blogs" />
+           
+        </div>
+    </div>
+</section>

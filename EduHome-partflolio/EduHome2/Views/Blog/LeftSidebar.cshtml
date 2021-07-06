@@ -1,0 +1,112 @@
+﻿@model VmBlog
+@{
+    ViewData["Title"] = "LeftSidebar";
+}
+
+
+<section id="about" style="background-image: url(/assets/image/banner.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="banner-content-wrapper">
+                    <div class="banner-content">
+                        <h2>Blog LeftSidebar</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</section>
+<section id="courses-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="blog-sidebar right">
+                    <div class="single-blog-widget">
+                        <h3>SEARCH</h3>
+                        <div class="blog-search">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    @await Component.InvokeAsync("VcCategory")
+                    <div class="single-blog-widget">
+                        <div class="single-blog-banner">
+                            <a href="">
+                                <img src="~/assets/image/blog-img.jpg" alt="">
+                            </a>
+                            <h2>best<br> eductaion<br> theme</h2>
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+                    <div class="single-blog-widget">
+                        <h3>LATEST POST</h3>
+                        @await Component.InvokeAsync("VcLatest")
+
+                    </div>
+                    <div class="single-blog-widget">
+                        <h3>tags</h3>
+                        <div class="single-tag">
+                            <a href="blog-details.html" class="mr-10 mb-10">course</a>
+                            <a href="blog-details.html" class="mr-10 mb-10">education</a>
+                            <a href="blog-details.html" class="mb-10">teachers</a>
+                            <a href="blog-details.html" class="mr-10">learning</a>
+                            <a href="blog-details.html" class="mr-10">university</a>
+                            <a href="blog-details.html">events</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <section id="Lastest" style="padding: unset">
+                    <div class="container">
+
+                        <div class="row">
+
+                            @foreach (var item in Model.Blogs)
+                            {
+
+                                <div class="col-lg-6 col-md-6  col-sm-12">
+                                    <div class="card mt-5">
+                                        <div class="media-5">
+                                            <img src="~/assets/image/@item.image" class="card-img-top" alt="...">
+                                            <div class="course-hover">
+                                                <i class="fas fa-link"></i>
+                                            </div>
+                                            <div class="overlay"></div>
+                                        </div>
+
+                                        <div class="card-body">
+                                            <div class="blog-top">
+                                                <p>
+                                                    @Html.Raw(item.Date)
+                                                </p>
+                                            </div>
+                                            <div class="blog-bottom">
+                                                <h2>
+                                                    <a href="">@item.Description</a>
+                                                </h2>
+                                                <a href="" class="mybtn">Read More</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            }
+
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+     
+
+        </div>
+
+    </div>
+</section>
+

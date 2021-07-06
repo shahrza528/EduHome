@@ -1,0 +1,54 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="intro-y flex items-center mt-8">
+    <h2 class="text-lg font-medium mr-auto">
+        Blog Create
+    </h2>
+</div>
+<div class="grid grid-cols-12 gap-6 mt-5">
+    <div class="intro-y col-span-12 lg:col-span-6">
+        <!-- BEGIN: Form Layout -->
+        <form  method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" style="color:red"></div>
+            <div class="intro-y box p-5">
+                <div>
+                    <label asp-for="ImageFile">Image Name</label>
+                    <input asp-for="ImageFile" class="input w-full border mt-2" placeholder="Input text">
+                </div>
+                <div>
+                    <label sp-for="Title">Title</label>
+                    <input asp-for="Title" class="input w-full border mt-2" placeholder="Input text">
+                </div>
+                <div>
+                    <label asp-for="Date">Date</label>
+                    <input asp-for="Date" class="input w-full border mt-2" placeholder="Input text">
+                </div>
+                <div class="mt-3">
+                    <label asp-for="Description">Description</label>
+                    <div class="mt-2">
+                        <textarea  asp-for="Description" id="editor" data-feature="basic" style=" width: 100%; border: 1px solid #adadad; border-radius: 5px; height: 84px;"></textarea>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <label sp-for="BlogCategoryId">BlogCategory</label>
+                    <div class="mt-2">
+                        <select asp-for="BlogCategoryId"asp-items="@(new SelectList(ViewBag.BlogCategory ,"Id","Name"))" data-placeholder="Select your favorite actors" class="select2 w-full">
+                            <option  selected="" disabled>Select Blog</option>
+
+                        </select>
+                    </div>
+                </div>
+          
+                <div class="text-right mt-5">
+                    <button type="button" class="button w-24 border text-gray-700 mr-1" asp-area="Admin" asp-controller="Blog" asp-action="Index">Cancel</button>
+                    <button type="submit" class="button w-24 bg-theme-1 text-white">Create</button>
+                </div>
+            </div>
+        </form>
+        <!-- END: Form Layout -->
+    </div>
+</div>

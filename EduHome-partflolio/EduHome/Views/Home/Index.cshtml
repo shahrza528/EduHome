@@ -1,0 +1,486 @@
+﻿@model List<Slider>
+@{
+    ViewData["Title"] = "Index";
+    int n = 1;
+}
+
+<div class="container-flued karusel">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @foreach (var item in Model)
+            {
+               
+                <div class="carousel-item @(n==1?"active":"") d-flex">
+                    <img src="~/assets/image/@item.Image" class="d-block w-100" alt="...">
+                    <div class="corusel_text animate__animateda nimate__fadeInUp">
+                        <h2>@item.MyProperty</h2>
+                        <p>@item.Title_2</p>
+                        <a href="#">
+                            LEARN MORE
+                        </a>
+                    </div>
+                    
+
+                </div>
+                n++;
+            }
+            
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<!-- Professional teacher -->
+<div class="pr_teacher">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <h2>PROFESSIONAL TEACHER</h2>
+                <P>I must explain to you how all this mistaken denouncing pleure and praising pain</P>
+            </div>
+            <div class="col-lg-4">
+                <h2>PROFESSIONAL TEACHER</h2>
+                <P>I must explain to you how all this mistaken denouncing pleure and praising pain</P>
+            </div>
+            <div class="col-lg-4 ">
+                <h2>PROFESSIONAL TEACHER</h2>
+                <P>I must explain to you how all this mistaken denouncing pleure and praising pain</P>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="welcome_eduhome">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 left_eduhome">
+                <h2>WELCOME TO <span>EDUHOME</span> </h2>
+                <p>
+                    I must explain to you how all this mistaken idea of denouncing pleure and prsing pain was
+                    born
+                    and I
+                    will give you a complete account of the system, and expound the actual teachings the
+                    master-builder
+                    of humanit happiness
+                </p>
+                <p>
+                    I must explain to you how all this mistaken idea of denouncing pleure and prsing pain was
+                    born
+                    and I
+                    will give you a complete account of the system
+                </p>
+                <a href="#">VIEW COURSES</a>
+            </div>
+            <div class="col-lg-6 right_eduhome">
+                <img src="~/assets/image/about.png" alt="Image"></col-6>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="weOffer container-flued">
+    <div class="uppColor">
+        <div class="row">
+            <div class="container">
+                <div class="weOffer_top">
+                    <img src="~/assets/image/section1.png" alt="">
+                    <h2>COURSES WE OFFER</h2>
+                </div>
+                <div class="weOffer_bottom container ">
+                    <div class="card-group">
+                        <div class="card">
+                            <div class="cardRed">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <img src="~/assets/image/course1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">CSE ENGINEERING</h5>
+                                <p class="card-text">
+                                    I must explain to you how all this a mistaken idea of
+                                    denouncing great explorer of the rut the is lder of human happiness
+                                </p>
+                                <a href="">Read more</a>
+
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="cardRed">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <img src="~/assets/image/course2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">political science</h5>
+                                <p class="card-text">
+                                    I must explain to you how all this a mistaken idea of
+                                    denouncing great explorer of the rut the is lder of human happiness
+                                </p>
+                                <a href="">Read more</a>
+
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="cardRed">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <img src="~/assets/image/course3.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">micro biology</h5>
+                                <p class="card-text">
+                                    I must explain to you how all this a mistaken idea of
+                                    denouncing great explorer of the rut the is lder of human happiness
+                                </p>
+                                <a href="">Read more</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="takeVideo">
+    <div class="container">
+        <div class="row">
+            <div class="takeVideo_left col-lg-6 col-sm-12">
+                <h2>TAKE A VIDEO TOUR</h2>
+                <div class="videoImg">
+                    <div class="videoColor"></div>
+                    <a href="#" id="showvideo">
+                        <div class="play_video_container">
+
+                            <div id="test">
+                            </div>
+
+                        </div>
+
+                        <i class="fas fa-play"></i>
+                    </a>
+                    <!-- <i class="far fa-window-close"></i> -->
+
+                </div>
+
+
+            </div>
+            <div class="takeVideo_right col-lg-6 col-sm-12">
+                <h2>NOTICE BOARD</h2>
+                <div class="dateNews">
+                    <div class="custom-card">
+                        <h2>5, June 2017</h2>
+                        <p>
+                            I must explain to you how all this mistaken idea of denouncing plasure and praising
+                            pain was born and I will give you a complete
+                        </p>
+                        <hr>
+                    </div>
+                    <div class="custom-card">
+                        <h2>4, June 2017</h2>
+                        <p>
+                            I must explain to you how all this mistaken idea of denouncing plasure and praising
+                            pain was born and I will give you a complete
+                        </p>
+                        <hr>
+                    </div>
+                    <div class="custom-card">
+                        <h2>5, June 2017</h2>
+                        <p>
+                            I must explain to you how all this mistaken idea of denouncing plasure and praising
+                            pain was born and I will give you a complete
+                        </p>
+                        <hr>
+                    </div>
+                    <div class="custom-card">
+                        <h2>3, June 2017</h2>
+                        <p>
+                            I must explain to you how all this mistaken idea of denouncing plasure and praising
+                            pain was born and I will give you a complete
+                        </p>
+                        <hr>
+                    </div>
+                    <div class="custom-card">
+                        <h2>8, August 2017</h2>
+                        <p>
+                            I must explain to you how all this mistaken idea of denouncing plasure and praising
+                            pain was born and I will give you a complete
+                        </p>
+                        <hr>
+                    </div>
+                    <div class="custom-card">
+                        <h2>12, June 2017</h2>
+                        <p>
+                            I must explain to you how all this mistaken idea of denouncing plasure and praising
+                            pain was born and I will give you a complete
+                        </p>
+                        <hr>
+                    </div>
+                    <div class="custom-card">
+                        <h2>5, June 2017</h2>
+                        <p>
+                            I must explain to you how all this mistaken idea of denouncing plasure and praising
+                            pain was born and I will give you a complete
+                        </p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<div class="upComming container-flued">
+
+    <div class="container">
+        <div class="upComming_top">
+            <img src="~/assets/image/section.png" alt="">
+            <h2>COURSES WE OFFER</h2>
+        </div>
+        <div class="upComming_bottom">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-3 col-lg-6 col-md-6 col-sm-12">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="~/assets/image/event3 (1).jpg" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h2 class="card-title">20 June 2017</h2>
+                                    <a href="#">ADVANCE PHP WORKSHOP</a>
+                                    <ul>
+                                        <li>
+                                            <i class="far fa-clock"></i>
+                                            <p>9.00 AM - 4.45 PM</p>
+
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <p>New Yourk City</p>
+                                        </li>
+                                    </ul>
+                                    <a id="joinNow_button" href="#">JOIN NOW</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3 col-lg-6 col-md-6 col-sm-12">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="~/assets/image/event3 (1).jpg" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h2 class="card-title">20 June 2017</h2>
+                                    <a href="#">ADVANCE PHP WORKSHOP</a>
+                                    <ul>
+                                        <li>
+                                            <i class="far fa-clock"></i>
+                                            <p>9.00 AM - 4.45 PM</p>
+
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <p>New Yourk City</p>
+                                        </li>
+                                    </ul>
+                                    <a id="joinNow_button" href="#">JOIN NOW</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="..." alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a
+                                    natural lead-in to additional content. This content is a little bit longer.
+                                </p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="..." alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a
+                                    natural lead-in to additional content. This content is a little bit longer.
+                                </p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div> -->
+
+<div class="DavidMorgan container-flued">
+    <div class="owlCaouruselBack"></div>
+
+    <div class="owlCaourusel">
+        <div class="owl-carousel owl-theme">
+            <div class="item_1 item" id="">
+                <div class="DavidImage">
+                    <img src="~/assets/image/testimonial.jpg" alt="">
+                </div>
+                <div class="DavidText">
+
+
+                    <p>
+                        I must explain to you how all this mistaken idea of denoung pleure and praising pain was
+                        born
+                        and I will give you a coete account of the system, and expound the actual
+                    </p>
+                    <h4>David Morgan</h4>
+                    <h5>Student, CSE</h5>
+                </div>
+            </div>
+            <div class="item_1 item" id="">
+                <div class="DavidImage">
+                    <img src="~/assets/image/testimonial.jpg" alt="">
+                </div>
+                <div class="DavidText">
+
+
+                    <p>
+                        I must explain to you how all this mistaken idea of denoung pleure and praising pain was
+                        born
+                        and I will give you a coete account of the system, and expound the actual
+                    </p>
+                    <h4>David Morgan</h4>
+                    <h5>Student, CSE</h5>
+                </div>
+            </div>
+            <div class="item_1 item" id="">
+                <div class="DavidImage">
+                    <img src="~/assets/image/testimonial.jpg" alt="">
+                </div>
+                <div class="DavidText">
+
+
+                    <p>
+                        I must explain to you how all this mistaken idea of denoung pleure and praising pain was
+                        born
+                        and I will give you a coete account of the system, and expound the actual
+                    </p>
+                    <h4>David Morgan</h4>
+                    <h5>Student, CSE</h5>
+                </div>
+            </div>
+            <div class="item_1 item" id="">
+                <div class="DavidImage">
+                    <img src="~/assets/image/testimonial.jpg" alt="">
+                </div>
+                <div class="DavidText">
+
+
+                    <p>
+                        I must explain to you how all this mistaken idea of denoung pleure and praising pain was
+                        born
+                        and I will give you a coete account of the system, and expound the actual
+                    </p>
+                    <h4>David Morgan</h4>
+                    <h5>Student, CSE</h5>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="Latest container-flued">
+    <div class="container">
+        <div class="row">
+
+            <div class="Latest_top">
+                <img src="~/assets/image/section.png" alt="">
+                <h2>COURSES WE OFFER</h2>
+            </div>
+            <div class="Latest_bottom container ">
+                <div class="card-group">
+                    <div class="card">
+                        <div class="color">
+                            <div class="cardRed">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <img src="~/assets/image/course1.jpg" class="card-img-top" alt="...">
+                        </div>
+
+                        <div class="card-body">
+                            <p>
+                                By Alex / June 20, 2017 /
+                            </p>
+                            <hr>
+                            <a id="Latest_idea" href="#">I must explain to you how all this a mistaken idea </a>
+                            <a id="Latest_readMore" href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="color">
+                            <div class="cardRed">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <img src="~/assets/image/course1.jpg" class="card-img-top" alt="...">
+                        </div>
+
+                        <div class="card-body">
+                            <p>
+                                By Alex / June 20, 2017 /
+                            </p>
+                            <hr>
+                            <a id="Latest_idea" href="#">I must explain to you how all this a mistaken idea </a>
+                            <a id="Latest_readMore" href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="color">
+                            <div class="cardRed">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <img src="~/assets/image/course1.jpg" class="card-img-top" alt="...">
+                        </div>
+
+                        <div class="card-body">
+                            <p>
+                                By Alex / June 20, 2017 /
+                            </p>
+                            <hr>
+                            <a id="Latest_idea" href="#">I must explain to you how all this a mistaken idea </a>
+                            <a id="Latest_readMore" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

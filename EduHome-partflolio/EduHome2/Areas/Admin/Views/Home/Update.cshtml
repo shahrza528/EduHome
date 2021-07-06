@@ -1,0 +1,43 @@
+﻿@model MorganSlider
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="intro-y flex items-center mt-8">
+    <h2 class="text-lg font-medium mr-auto">
+        Update Morgan Slider
+    </h2>
+</div>
+<div class="grid grid-cols-12 gap-6 mt-5">
+    <div class="intro-y col-span-12 lg:col-span-6">
+        <!-- BEGIN: Form Layout -->
+        <div class="intro-y box p-5">
+            <form asp-area="Admin" asp-controller="Home" asp-action="Update" method="Post">
+                <div style="color:red" asp-validation-summary="All"></div>
+                <input asp-for="Id" hidden />
+                <div>
+                    <label>FullName</label>
+                    <input type="text" asp-for="FullName" class="input w-full border mt-2" placeholder="Input text">
+                    <span asp-validation-for="FullName" style="color:red"></span>
+                </div>
+                <div>
+                    <label>Description</label>
+                    <input type="text" asp-for="Description" class="input w-full border mt-2" placeholder="Input text">
+                    <span asp-validation-for="Description" style="color:red"></span>
+
+                </div>
+                <div>
+                    <label>Postion</label>
+                    <input type="text" asp-for="Position" class="input w-full border mt-2" placeholder="Input text">
+                    <span asp-validation-for="Position" style="color:red"></span>
+
+                </div>
+                <div class="text-right mt-5">
+                    <a class="button w-24 border text-gray-700 mr-1" asp-area="Admin" asp-controller="Home" asp-action="Index">Cancel</a>
+                    <button type="submit" class="button w-24 bg-theme-1 text-white">Update</button>
+                </div>
+            </form>
+        </div>
+        <!-- END: Form Layout -->
+    </div>
+</div>

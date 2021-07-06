@@ -1,0 +1,66 @@
+﻿@model VmHome
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section id="about" style="background-image: url(/assets/image/banner.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="banner-content-wrapper">
+                    <div class="banner-content">
+                        <h2>courses</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</section>
+<div id="search-courses">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="courses-title">
+                    <h3>search courses</h3>
+                </div>
+                <div class="courses-form">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            @foreach (var item in Model.Courses)
+            {
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card">
+                        <div class="media-5">
+                            <img src="~/assets/image/@item.Image" class="card-img-top" alt="..." />
+                            <div class="course-hover">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <div class="overlay"></div>
+                        </div>
+
+                        <div class="card-body">
+                            <h3 class="card-title"><a href="">@item.Title</a></h3>
+                            <p class="card-text">
+                                @item.Decription
+                            </p>
+                            <h3><a class="addToCard" data-courseId="@item.Id">Add To Cart</a></h3>
+                            <a href="#" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+

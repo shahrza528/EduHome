@@ -1,0 +1,37 @@
+﻿@model List<Blog>
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{ int i = 0;
+                int count = Model.Count; }
+@foreach (var item in Model)
+{
+    i++;
+<div class="col-lg-4 @(count!=i?"col-md-6":"hidden-md")  col-sm-12">
+    <div class="card mt-5">
+        <div class="media-5">
+            <img src="~/assets/image/@item.image" class="card-img-top" alt="...">
+            <div class="course-hover">
+                <i class="fas fa-link"></i>
+            </div>
+            <div class="overlay"></div>
+        </div>
+
+        <div class="card-body">
+            <div class="blog-top">
+                <p>
+                    @Html.Raw(item.Date)
+                </p>
+            </div>
+            <div class="blog-bottom">
+                <h2>
+                    <a href="">@item.Description</a>
+                </h2>
+                <a href="" class="mybtn">Read More</a>
+            </div>
+        </div>
+
+    </div>
+</div>            }

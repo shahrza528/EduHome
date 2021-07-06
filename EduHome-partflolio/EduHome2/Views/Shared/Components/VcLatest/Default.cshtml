@@ -1,0 +1,23 @@
+﻿@model VmBlog
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model.Blogs)
+{
+    <div class="single-post">
+        <div class="card mb-3">
+            <div class="row g-0 ">
+                <div class="col-lg-4 col-md-2 col-4">
+                    <img style="max-width: 100px" src="~/assets/image/@item.image " alt="... ">
+                </div>
+                <div class="col-lg-8 col-md-10 col-8">
+                    <div class="card-body">
+                        <h4><a href=" ">@item.Date</a></h4>
+                        <p>@item.Description</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
